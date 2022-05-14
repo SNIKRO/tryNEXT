@@ -6,7 +6,9 @@
     "dev": "cross-env NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "mock": "json-server -w db.json -p 4200 -d 450",
+    "server": "concurrently \"npm run dev\" \"npm run mock\""
   },
   "dependencies": {
     "cross-env": "^7.0.3",
@@ -16,6 +18,7 @@
     "sass": "^1.51.0"
   },
   "devDependencies": {
+    "concurrently": "^7.1.0",
     "eslint": "8.15.0",
     "eslint-config-next": "12.1.6"
   }
