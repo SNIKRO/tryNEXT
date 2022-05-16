@@ -14,13 +14,12 @@ export default function Posts({ posts }) {
   //   }
   //   load()
   // }, [])
-  
 
   return (
     <MainLayout>
       <h1>Posts Pages</h1>
       <ul>
-        {posts.map( post => (
+        {posts.map ( post => (
           <li key = {post.id}>
             <Link href = {`/post/[id]`} as = {`/post/${post.id}`}>
               <a>
@@ -28,17 +27,16 @@ export default function Posts({ posts }) {
               </a>            
             </Link>
           </li>
-        )
-        )
-        }
+        ))}
       </ul>
     </MainLayout>
   )
 }
 
 Posts.getInitialProps = async () => {
-      const response = await fetch('http://localhost:4200/posts')
+      const response = await fetch('http://localhost:4200/post')
       const posts = await response.json()
+      console.log(posts)
       return {
         posts
       }
