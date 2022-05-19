@@ -7,12 +7,13 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "mock": "json-server -w db.json -p 4200 -d 450",
+    "mock": "json-server -w db.json -p 4200 -d 1750",
     "server": "concurrently \"npm run dev\" \"npm run mock\""
   },
   "dependencies": {
     "cross-env": "^7.0.3",
     "next": "12.1.6",
+    "nextjs-progressbar": "^0.0.14",
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "sass": "^1.51.0"
